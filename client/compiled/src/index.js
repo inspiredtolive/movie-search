@@ -1,0 +1,4 @@
+'use strict';
+
+ReactDOM.render(React.createElement(App, null), $('#app')[0]);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9pbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLFNBQVMsTUFBVCxDQUFnQixvQkFBQyxHQUFELE9BQWhCLEVBQXlCLEVBQUUsTUFBRixFQUFVLENBQVYsQ0FBekIiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJSZWFjdERPTS5yZW5kZXIoPEFwcCAvPiwgJCgnI2FwcCcpWzBdKTsiXX0=
