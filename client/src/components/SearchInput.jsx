@@ -6,7 +6,6 @@ class SearchInput extends React.Component {
   }
 
   handleInput() {
-    console.log('handling input!');
     this.props.fetchMovies(this.refs.category.value, this.refs.data.value);
   }
 
@@ -26,6 +25,7 @@ class SearchInput extends React.Component {
           <option value="title">Title</option>
           <option value="year">Year</option>
           <option value="director">Director</option>
+          <option value="genre">Genre</option>
         </select>
         <input ref="data" type="text" onInput={this.handleInput.bind(this)}/>
       </div>

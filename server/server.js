@@ -1,3 +1,4 @@
+var path = require('path');
 var express = require('express');
 var dbConnection = require('./db_connection');
 
@@ -16,7 +17,8 @@ app.set('port', 3000);
 app.use('/classes', router);
 
 // Serve the client files
-app.use(express.static(__dirname + '../client'));
+console.log(__dirname + '../client');
+app.use('/', express.static(path.join(__dirname, '../client')));
 dbConnection.connect();
 
 // If we are being run directly, run the server.

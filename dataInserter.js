@@ -118,7 +118,6 @@ movies.forEach(({title, year, director, genres})=>{
 
 // After inserting directors and genres
 Promise.all(queries).then(()=>{
-  console.log('All directors and genres inserted');
   // Insert all movies
   movies.forEach(({title, year, director, genres})=>{
     queries = [];
@@ -130,14 +129,14 @@ Promise.all(queries).then(()=>{
     // After getting the ids,
     // Insert the movie and connect them to the genres
     Promise.all(queries)
-      .then(([[{directors_id}], ...genres])=>{
-          query(`INSERT INTO movies (title, director_id, year) VALUES ("${title}",'${directors_id}','${year}')`)
-            .then(({insertId})=>{
-              genres.forEach(([{genres_id}])=>{
-                 query(`INSERT INTO mov_gen (movie_id, genre_id) VALUE ('${insertId}','${genres_id}')`);
-              });
-            });
+    .then(([[{directors_id}], ...genres])=>{
+      query(`INSERT INTO movies (title, director_id, year) VALUES ("${title}",'${directors_id}','${year}')`)
+      .then(({insertId})=>{
+        genres.forEach(([{genres_id}])=>{
+          query(`INSERT INTO mov_gen (movie_id, genre_id) VALUE ('${insertId}','${genres_id}')`);
+        });
       });
+    });
   });
 })
 .catch((err)=>{
