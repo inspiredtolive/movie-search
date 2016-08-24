@@ -1,4 +1,5 @@
 #app {
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   text-align: center;
 }
 
@@ -23,13 +24,35 @@ input, select {
 
 table {
   border-collapse: collapse;
+  border-spacing: 0;
+}
+
+thead {
+  color: #fff;
+  background: #395870;
+  background: linear-gradient(#49708f, #293f50);
+}
+
+th:first-child {
+  border-top-left-radius: 7px;
+}
+th:last-child {
+  border-top-right-radius: 7px;
+}
+
+tbody tr:nth-child(even) {
+  background: #f0f0f2;
 }
 
 th, td {
   padding: 0.5rem;
-  border: 1px solid black;
 }
 
 td {
   text-align: left;
+  border-bottom: 1px solid #cecfd5;
+  border-right: 1px solid #cecfd5;
+}
+td:first-child {
+  border-left: 1px solid #cecfd5;
 }
